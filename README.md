@@ -16,6 +16,8 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
  - [ ] Phase 1
   - [ ] Add Initial server code and boot scripts
   - [ ] Add configurations to adhere to the new folder structure
+  - [ ] Add in functionality for basic user management
+  - [ ] Configure testing environment and write example test for user management functionality
  - [ ] Phase 2
   - [ ] Setup and configure Webpack
   - [ ] Convert all possibly Gulp/Systemjs implementations to Webpack
@@ -23,3 +25,4 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [ ] Configure and include Angular Universal
   - [ ] Build out basic Angular 2 hello world application
   - [ ] Add general-use components, directives, and resolvers
+  - [ ] Configure test environment and write example test for hello world app
