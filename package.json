@@ -1,0 +1,22 @@
+{
+  "name": "lan-stack-accelerator",
+  "version": "1.0.0",
+  "description": "Quick-start application for a full-stack, monolithic lan-stack app.",
+  "main": "./server/app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "run-tests": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RadialSpark/LAN-Stack-Accelerator.git"
+  },
+  "author": "RadialSpark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RadialSpark/LAN-Stack-Accelerator/issues"
+  },
+  "homepage": "https://github.com/RadialSpark/LAN-Stack-Accelerator#readme"
+}

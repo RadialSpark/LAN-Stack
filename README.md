@@ -12,8 +12,8 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [x] Define roadmap
   - [x] Initialize readme
   - [x] Setup initial folder structure
-  - [ ] Install required dependencies
-  - [ ] Add licensing
+  - [x] Setup initial package.json
+  - [x] Add licensing
  - [ ] Phase 1
   - [ ] Add initial server code and boot scripts
   - [ ] Add configurations to adhere to the new folder structure
