@@ -14,10 +14,10 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [x] Setup initial folder structure
   - [x] Setup initial package.json
   - [x] Add licensing
- - [ ] Phase 1
+ - [x] Phase 1
   - [x] Add initial server code and boot scripts
   - [x] Add configurations to adhere to the new folder structure
-  - [ ] Configure testing environment
+  - [x] Configure testing environment
  - [ ] Phase 2
   - [ ] Setup and configure Webpack
   - [ ] Convert all possible Gulp/Systemjs implementations to Webpack
@@ -26,3 +26,8 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [ ] Build out basic Angular 2 hello world application
   - [ ] Add general-use components, directives, and resolvers
   - [ ] Configure test environment and write example test for hello world app
+ - [ ] Phase 4
+  - [ ] Update LMP (LAN project manager) to handle addition of:
+    - [ ] Users
+    - [ ] Emails
+    - [ ] Heroku Connect
