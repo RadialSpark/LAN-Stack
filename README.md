@@ -7,7 +7,7 @@ The stack is standardized on Node v6.x, Loopback 3, and Angular2 v2.3.x.
 This template is intended to facilitate developers quickly spooling up new LAN stack projects by simply cloning the repo, minimizing wasted resources on time-consuming and automatable dev-ops tasks.
 
 Roadmap (Future phases will be broken up into smaller subtasks when reached):
- - [ ] Phase 0
+ - [x] Phase 0
   - [x] Create repo
   - [x] Define roadmap
   - [x] Initialize readme
@@ -15,10 +15,9 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [x] Setup initial package.json
   - [x] Add licensing
  - [ ] Phase 1
-  - [ ] Add initial server code and boot scripts
-  - [ ] Add configurations to adhere to the new folder structure
-  - [ ] Add in functionality for basic user management
-  - [ ] Configure testing environment and write example test for user management functionality
+  - [x] Add initial server code and boot scripts
+  - [x] Add configurations to adhere to the new folder structure
+  - [ ] Configure testing environment
  - [ ] Phase 2
   - [ ] Setup and configure Webpack
   - [ ] Convert all possible Gulp/Systemjs implementations to Webpack
