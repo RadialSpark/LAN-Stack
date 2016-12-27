@@ -18,11 +18,11 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [x] Add initial server code and boot scripts
   - [x] Add configurations to adhere to the new folder structure
   - [x] Configure testing environment
- - [ ] Phase 2
-  - [ ] Setup and configure Webpack
+ - [x] Phase 2
+  - [x] Setup and configure Webpack
  - [ ] Phase 3
   - [ ] Configure and include Angular Universal
-  - [ ] Build out basic Angular 2 hello world application
+  - [x] Build out basic Angular 2 hello world application
   - [ ] Add general-use components, directives, and resolvers
   - [ ] Configure test environment and write example test for hello world app
  - [ ] Phase 4
