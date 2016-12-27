@@ -20,13 +20,15 @@ Roadmap (Future phases will be broken up into smaller subtasks when reached):
   - [x] Configure testing environment
  - [ ] Phase 2
   - [ ] Setup and configure Webpack
-  - [ ] Convert all possible Gulp/Systemjs implementations to Webpack
  - [ ] Phase 3
   - [ ] Configure and include Angular Universal
   - [ ] Build out basic Angular 2 hello world application
   - [ ] Add general-use components, directives, and resolvers
   - [ ] Configure test environment and write example test for hello world app
  - [ ] Phase 4
+  - [ ] Write unit tests for utils methods
+  - [ ] Write tests for basic angular 2 app
+ - [ ] Phase 5
   - [ ] Update LMP (LAN project manager) to handle addition of:
     - [ ] Users
     - [ ] Emails

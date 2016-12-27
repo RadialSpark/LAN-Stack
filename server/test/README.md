@@ -1,4 +1,4 @@
-# tests
+# test
 Subdirectory for server side tests.
 
 Try to keep all tests for a single component (e.g. a single loopback model, module, etc.)
