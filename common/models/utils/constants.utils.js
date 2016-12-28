@@ -1,14 +1,9 @@
 // object containing various success/error/info messages
 const messages = {
-
-};
-
-// object containing various status strings
-const status = {
-
+  ROLLBACK_ERROR: 'Error: Could not rollback data after error occurred.',
+  COMMIT_ERROR: 'Error: Could not commit data to the database'
 };
 
 module.exports = {
-  messages,
-  status
+  messages
 };

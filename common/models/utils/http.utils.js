@@ -1,3 +1,6 @@
+const constants = require('./constants.utils');
+const dbUtils = require('./db.utils');
+
 /**
  * Handle errors, including optional transaction management for handling rollbacks in db errors
  * @param res {object} - thee http response modelect
@@ -8,13 +11,9 @@
 let handleError = (res, status, message, transaction) => {
 	// if the transaciton was passed in, then we want to rollback
 	if (transaction) {
-		transaction.rollback((err) => {
-			if (err) {
-				console.log(err);
-				return res.status(500).send('Error: Could not rollback data after error occurred.');
-			}
-			return res.status(status).send(message);
-		});
+		return dbUtils.rollback(transaction)
+			.then((success) => res.status(status).send(message))
+			.catch((err) => res.status(500).send(constants.messages.ROLLBACK_ERROR));
 	} else {
 		// return the provided status and message
 		return res.status(status).send(message);
@@ -30,12 +29,9 @@ let handleError = (res, status, message, transaction) => {
  */
 let handleSuccess = function(res, status, data, transaction) {
 	if (transaction) {
-		transaction.commit(function(err) {
-			// if there is an error in committing, then rollback and send a 500 to the user
-			if (err) { return handleError(res, 500, 'Error: Could not commit data to the database', transaction); }
-			// otherwise return the committed data
-			return res.status(status).send({ data: data });
-		});
+		return dbUtils.commit(transaction)
+			.then((success) => res.status(status).send({ data: data }))
+			.catch((err) => handleError(res, 500, constants.messages.COMMIT_ERROR, transaction));
 	 } else {
 		return res.status(status).send({ data: data });
 	 }
