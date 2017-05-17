@@ -10,11 +10,12 @@
     "node": "6.9.0"
   },
   "scripts": {
-    "build": "rimraf client/dist && webpack",
-    "start:dev:win": "SET NODE_ENV=development && npm run start:dev",
-    "start:dev:linux": "NODE_ENV=development && npm run start:dev",
-    "start:dev": "npm run build && webpack-dev-server --content-base client/src/ --inline --progress --port 8080",
-    "start": "npm run build && node .",
+    "clean": "rimraf client/dist",
+    "win:deploy:heroku": "SET NODE_ENV=production && npm run build && git add . && git commit && git push heroku master",
+    "build": "npm run clean && webpack",
+    "build:dev": "npm run clean && webpack --watch",
+    "win:build:dev": "SET NODE_ENV=development && npm run build:dev",
+    "start": "node .",
     "test:api": "mocha common/test/*.test.js --timeout 10000",
     "test:server": "mocha server/test/*.test.js --timeout 10000",
     "test": "npm run test:api & npm run test:server"
