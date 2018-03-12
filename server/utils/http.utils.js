@@ -15,7 +15,7 @@ const handleError = (res, status, message, transaction) => {
 	if (transaction) {
 		return dbUtils.rollback(transaction)
 			.then((success) => res.status(status).send(message))
-			.catch((err) => res.status(500).send(constants.messages.ROLLBACK_ERROR));
+			.catch((err) => res.status(500).send(constants.MESSAGES.ROLLBACK_ERROR));
 	} else {
 		// return the provided status and message
 		return res.status(status).send(message);
@@ -29,17 +29,17 @@ const handleError = (res, status, message, transaction) => {
  * @param data {any} - the data to be sent in the response body
  * @param transaction {object} - optional transaction for committing to the database
  */
-const handleSuccess = function(res, status, data, transaction) {
+const handleSuccess = (res, status, data, transaction) => {
 	if (transaction) {
 		return dbUtils.commit(transaction)
 			.then((success) => res.status(status).send({ data: data }))
-			.catch((err) => handleError(res, 500, constants.messages.COMMIT_ERROR, transaction));
+			.catch((err) => handleError(res, 500, constants.MESSAGES.COMMIT_ERROR, transaction));
 	 } else {
 		return res.status(status).send({ data: data });
 	 }
 };
 
-module.exports = {
+module.exports = Object.freeze({
 	handleError,
 	handleSuccess
-};
+});

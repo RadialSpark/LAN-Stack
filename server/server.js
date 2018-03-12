@@ -4,9 +4,6 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 const throng = require('throng');
 
-// set the root directory for other modules to reference
-global.__root = __dirname;
-
 // establish the number of process based off environment variable config, cpus, or default 1
 const workers = process.env.WEB_CONCURRENCY || require('os').cpus().length || 1;
 

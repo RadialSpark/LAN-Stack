@@ -1,3 +1,4 @@
+'use strict';
 const helmet = require('helmet');
 
 module.exports = (server) => {

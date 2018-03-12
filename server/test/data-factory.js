@@ -22,7 +22,7 @@ const createMockResponse = () => {
  * @description creates a mock loopback transaction object
  * @param hasError {boolean} indicate whether or not an error should be imitated in the transaction object
  */
-let createMockTransaction = (hasError) => {
+const createMockTransaction = (hasError) => {
     return {
         err: hasError,
         commit: function(callback) {
@@ -37,7 +37,7 @@ let createMockTransaction = (hasError) => {
     };
 }
 
-module.exports = {
+module.exports = Object.freeze({
     createMockResponse,
     createMockTransaction
-};
+});

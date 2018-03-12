@@ -33,7 +33,7 @@ const commit = (tx) => {
     })
 }
 
-module.exports = {
+module.exports = Object.freeze({
     rollback,
     commit
-}
+});
