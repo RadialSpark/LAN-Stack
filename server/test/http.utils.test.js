@@ -1,10 +1,12 @@
+'use strict';
+
 const constants = require('../models/utils/constants.utils');
 const dataFactory = require('./data-factory');
 const httpUtils = require('../models/utils/http.utils');
 const expect = require('chai').expect;
 
 /**
- * @description Tests for the http.utils module. 
+ * @description Tests for the http.utils module.
  */
 
 describe('HTTP Utils handleError', () => {

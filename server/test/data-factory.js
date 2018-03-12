@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * @description creates a mock http response for basic testing
  */
-let createMockResponse = () => {
+const createMockResponse = () => {
     return {
         mockStatus: null,
         mockBody: null,

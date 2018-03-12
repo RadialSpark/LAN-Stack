@@ -1,3 +1,5 @@
+'use strict';
+
 const constants = require('./constants.utils');
 const dbUtils = require('./db.utils');
 
@@ -8,7 +10,7 @@ const dbUtils = require('./db.utils');
  * @param message {string} - the error message
  * @param transaction {object} - optional, the db transaction instance
  */
-let handleError = (res, status, message, transaction) => {
+const handleError = (res, status, message, transaction) => {
 	// if the transaciton was passed in, then we want to rollback
 	if (transaction) {
 		return dbUtils.rollback(transaction)
@@ -27,7 +29,7 @@ let handleError = (res, status, message, transaction) => {
  * @param data {any} - the data to be sent in the response body
  * @param transaction {object} - optional transaction for committing to the database
  */
-let handleSuccess = function(res, status, data, transaction) {
+const handleSuccess = function(res, status, data, transaction) {
 	if (transaction) {
 		return dbUtils.commit(transaction)
 			.then((success) => res.status(status).send({ data: data }))

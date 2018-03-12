@@ -1,10 +1,11 @@
+'use strict';
 const constants = require('../models/utils/constants.utils');
 const dataFactory = require('./data-factory');
 const dbUtils = require('../models/utils/db.utils');
 const expect = require('chai').expect;
 
 /**
- * @description Tests for the db.utils module. 
+ * @description Tests for the db.utils module.
  */
 
 describe('DB Utils commit', () => {

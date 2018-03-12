@@ -1,3 +1,4 @@
+'use strict';
 // object containing various success/error/info messages
 const messages = {
   ROLLBACK_ERROR: 'Error: Could not rollback data after error occurred.',
