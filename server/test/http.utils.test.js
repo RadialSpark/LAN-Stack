@@ -1,9 +1,9 @@
 'use strict';
 const PROJECT_DIR = require('../../settings').PROJECT_DIR;
 
-const constants = require(PROJECT_DIR + '/server/utils/constants.utils');
+const constants = require(`${PROJECT_DIR}/server/utils/constants.utils`);
 const dataFactory = require('./data-factory');
-const httpUtils = require(PROJECT_DIR + '/server/utils/http.utils');
+const httpUtils = require(`${PROJECT_DIR}/server/utils/http.utils`);
 const expect = require('chai').expect;
 
 /**
