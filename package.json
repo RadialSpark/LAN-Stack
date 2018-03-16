@@ -1,13 +1,13 @@
 {
-  "name": "lan-stack",
+  "name": "rsps",
   "version": "1.0.0",
-  "description": "Quick-start application for a full-stack, monolithic lan-stack app.",
+  "description": "RadialSpark Productivity and Collaboration Suite",
   "main": "server/server.js",
   "directories": {
     "doc": "docs"
   },
   "engines": {
-    "node": ">=6.9.0"
+    "node": "8.10.0"
   },
   "scripts": {
     "start": "node .",
@@ -16,20 +16,19 @@
     "build:server": "ng build --prod --app 1 --output-hashing=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:server": "mocha server/test/*.test.js --timeout 10000",
-    "test:client": "ng test",
+    "test:server": "nyc mocha server/test/**/*.test.js --timeout 10000",
+    "test:client": "ng test --code-coverage --reporters=coverage-istanbul",
     "test": "npm run test:server && npm run test:client"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RadialSpark/LAN-Stackgit"
+    "url": "git+https://github.com/RadialSpark/RSPSgit"
   },
   "author": "RadialSpark",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RadialSpark/LAN-Stack/issues"
+    "url": "https://github.com/RadialSpark/RSPS/issues"
   },
-  "homepage": "https://github.com/RadialSpark/LAN-Stack#readme",
+  "homepage": "https://github.com/RadialSpark/RSPS#readme",
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -64,7 +63,11 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "chai": "3.5.0",
+    "chai-http": "3.0.0",
     "codelyzer": "^4.0.1",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
@@ -72,15 +75,42 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "mocha": "3.2.0",
+    "nsp": "^2.1.0",
+    "nyc": "^11.6.0",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
-    "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0",
-    "nsp": "^2.1.0",
-    "chai": "3.5.0",
-    "chai-http": "3.0.0",
-    "mocha": "3.2.0"
+    "typescript": "~2.5.3"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 75,
+    "statements": 75,
+    "functions": 75,
+    "branches": 75,
+    "include": [
+      "server/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.spec.js",
+      "server/**/*.factory.js",
+      "server/node_modules/**/*",
+      "server/datasources.*",
+      "server/middleware.*",
+      "server/config.*",
+      "server/server.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "require": [],
+    "extension": [
+      ".jsx"
+    ],
+    "cache": true,
+    "all": true
   }
 }
