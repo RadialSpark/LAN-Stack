@@ -1,7 +1,7 @@
 {
-  "name": "rsps",
+  "name": "lan-stack",
   "version": "1.0.0",
-  "description": "RadialSpark Productivity and Collaboration Suite",
+  "description": "QuickStart for lan applicaitons",
   "main": "server/server.js",
   "directories": {
     "doc": "docs"
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "node .",
+    "serve": "ng serve",
     "build": "npm run build:client && npm run build:server",
     "build:client": "ng build --prod",
     "build:server": "ng build --prod --app 1 --output-hashing=false",
@@ -22,13 +23,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RadialSpark/RSPSgit"
+    "url": "git+https://github.com/RadialSpark/LAN-Stack"
   },
   "author": "RadialSpark",
   "bugs": {
-    "url": "https://github.com/RadialSpark/RSPS/issues"
+    "url": "https://github.com/RadialSpark/LAN-Stack/issues"
   },
-  "homepage": "https://github.com/RadialSpark/RSPS#readme",
+  "homepage": "https://github.com/RadialSpark/LAN-Stack#readme",
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
