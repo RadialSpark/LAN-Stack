@@ -71,7 +71,7 @@ app.set('views', path.join(PROJECT_DIR, 'dist/browser'));
 app.get('*.*', loopback.static(path.join(PROJECT_DIR, 'dist/browser')));
 
 // All regular routes use the Universal engine
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.render(path.join(PROJECT_DIR, 'dist/browser', 'index.html'), { req });
 });
 
