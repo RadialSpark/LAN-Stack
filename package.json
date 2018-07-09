@@ -11,8 +11,10 @@
   },
   "scripts": {
     "start": "node .",
-    "serve": "ng serve",
-    "build": "npm run build:client && npm run build:server",
+    "postinstall": "npm run build",
+    "buildEnv": "node ./buildEnv.js",
+    "build": "npm run buildEnv && npm run build:client && npm run build:server",
+    "serve": "npm run buildEnv && ng serve",
     "build:client": "ng build --prod",
     "build:server": "ng build --prod --app 1 --output-hashing=false",
     "lint": "ng lint",
