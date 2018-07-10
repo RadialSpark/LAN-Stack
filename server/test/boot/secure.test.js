@@ -2,26 +2,24 @@
 
 const PROJECT_DIR = require('../../../settings').PROJECT_DIR;
 
-const factory = require(`${PROJECT_DIR}/server/test/factories/index.factory`);
-const secure = require(`${PROJECT_DIR}/server/boot/worker/04-secure`);
+const MockServer = require(`${PROJECT_DIR}/server/test/mocks/MockServer`);
+const secure = require(`${PROJECT_DIR}/server/boot/04-secure`);
 const expect = require('chai').expect;
 
-/**
- * @description Tests for the db.utils module.
- */
-
 describe('Secure boot script', () => {
-  it('should not fail when environment is production', (done) => {
+  it('should trust proxy when environment is production', (done) => {
     // need to set production to fire the trigger
     process.env.NODE_ENV = 'production';
-    let server = factory.server.createMockServer();
+    let server = new MockServer();
     secure(server);
+    expect(server.enabled('trust proxy')).to.be.true;
     done();
   });
-  it('should not fail when environment is not production', (done) => {
+  it('should not trust proxy when environment is not production', (done) => {
     process.env.NODE_ENV = 'development';
-    let server = factory.server.createMockServer();
+    let server = new MockServer();
     secure(server);
+    expect(server.enabled('trust proxy')).to.be.false;
     done();
   });
 });

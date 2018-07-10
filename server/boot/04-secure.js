@@ -1,6 +1,6 @@
 'use strict';
 
-const PROJECT_DIR = require('../../../settings').PROJECT_DIR;
+const PROJECT_DIR = require('../../settings').PROJECT_DIR;
 const secure = require(`${PROJECT_DIR}/server/middleware/secure`);
 
 module.exports = (server) => {

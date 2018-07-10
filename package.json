@@ -88,7 +88,7 @@
   },
   "nyc": {
     "check-coverage": true,
-    "per-file": true,
+    "per-file": false,
     "lines": 75,
     "statements": 75,
     "functions": 75,
@@ -98,10 +98,11 @@
     ],
     "exclude": [
       "src/**/*.spec.js",
-      "server/**/*.factory.js",
+      "server/test/**/*.js",
       "server/node_modules/**/*",
       "server/datasources.*",
       "server/middleware.*",
+      "server/utils/constants.js",
       "server/config.*",
       "server/server.js"
     ],
