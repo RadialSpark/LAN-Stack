@@ -1,4 +1,4 @@
-# LAN STACK
+# LAN STACK [![CircleCI](https://circleci.com/gh/RadialSpark/LAN-Stack.svg?style=svg&circle-token=7643d40a16d2365477b90581f9465166f6386087)](https://circleci.com/gh/RadialSpark/LAN-Stack)
 Quickstart for building Loopback/Angular applications
 
 ## Getting Started
