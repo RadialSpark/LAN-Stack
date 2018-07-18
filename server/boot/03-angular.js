@@ -29,7 +29,5 @@ module.exports = (app) => {
 	app.get('*.*', loopback.static(path.join(PROJECT_DIR, 'dist/browser')));
 
 	// All regular routes use the Universal engine
-	app.get('/*', (req, res) => {
-		res.render(path.join(PROJECT_DIR, 'dist/browser', 'index.html'), { req });
-	});
+	app.get('/*', require(`${PROJECT_DIR}/server/middleware/spa`));
 }
