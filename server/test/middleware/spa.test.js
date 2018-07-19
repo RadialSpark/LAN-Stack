@@ -25,9 +25,9 @@ describe('SPA middleware', () => {
     });
     let res = new MockResponse();
     spa(req, res, () => {});
-    // expect(res.path).to.be.truthy;
-    // expect(res.file).to.be.truthy;
-    // expect(res.renderArgs).to.be.truthy;
+    expect(res.path).to.be.truthy;
+    expect(res.file).to.be.truthy;
+    expect(res.renderArgs).to.be.truthy;
     done();
   })
 })
