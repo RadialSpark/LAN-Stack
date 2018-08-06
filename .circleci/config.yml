@@ -2,12 +2,12 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 1
+version: 2
 jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.10-browsers
+      - image: circleci/node:10.8-browsers
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -33,7 +33,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: npm test
+      # run tests, linter, and audit
+      - run: npm run validate
 
 
