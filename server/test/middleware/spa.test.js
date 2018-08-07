@@ -29,5 +29,5 @@ describe('SPA middleware', () => {
     expect(res.file).to.be.truthy;
     expect(res.renderArgs).to.be.truthy;
     done();
-  })
-})
+  });
+});

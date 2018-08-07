@@ -4,7 +4,8 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 const throng = require('throng');
 
-// establish the number of process based off environment variable config, cpus, or default 1
+// establish the number of process based off environment variable config,
+// cpus, or default 1
 const workers = process.env.WEB_CONCURRENCY || require('os').cpus().length || 1;
 
 const app = module.exports = loopback();
