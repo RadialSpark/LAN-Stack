@@ -114,6 +114,7 @@
     ],
     "require": [],
     "extension": [],
-    "cache": true
+    "cache": false,
+    "all": true
   }
 }
