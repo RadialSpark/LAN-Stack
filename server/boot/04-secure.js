@@ -8,4 +8,4 @@ module.exports = (server) => {
     server.enable('trust proxy');
     server.use(secure);
   }
-}
+};

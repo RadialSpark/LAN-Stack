@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const environmentFilesDirectory = path.join(__dirname, './src/environments');
-const targetEnvironmentFileName = 'environment.prod.ts';
+const targetEnvironmentFileName = 'environment.ts';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -24,7 +24,7 @@ switch (NODE_ENV) {
     break;
 }
 
-const template = `export const environment = { production: ${isProduction}, apiUrl: '${apiUrl}' };`;
+const template = `export const environment = { production: ${isProduction}, apiUrl: '${apiUrl}' };\n`;
 
 // Write environment file
 fs.writeFileSync(path.join(environmentFilesDirectory, targetEnvironmentFileName), template);

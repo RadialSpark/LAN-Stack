@@ -28,5 +28,5 @@ describe('Secure middleware', () => {
     secure(req, res, () => {});
     expect(res.statusCode).to.equal(301);
     done();
-  })
-})
+  });
+});

@@ -17,13 +17,15 @@
     "serve": "npm run buildEnv && ng serve",
     "build:client": "ng build --prod",
     "build:server": "ng build --prod --app 1 --output-hashing=false",
-    "lint": "ng lint",
+    "lint": "npm run lint:server && npm run lint:client",
+    "lint:client": "ng lint",
+    "lint:server": "node ./node_modules/eslint/bin/eslint.js server",
     "audit": "node ./audit.js",
     "e2e": "ng e2e",
     "test:server": "nyc mocha server/test/**/*.test.js --timeout 10000",
     "test:client": "ng test --code-coverage --reporters=coverage-istanbul",
     "test": "npm run test:server && npm run test:client",
-    "validate": "npm run audit && npm run test"
+    "validate": "npm run audit && npm run test && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -72,7 +74,8 @@
     "chai": "3.5.0",
     "chai-http": "^4.0.0",
     "codelyzer": "^4.0.1",
-    "eslint": "^3.17.1",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.9.1",
     "eslint-config-loopback": "^8.0.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",

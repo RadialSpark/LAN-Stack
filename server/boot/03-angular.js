@@ -5,7 +5,8 @@ require('@angular/core').enableProdMode();
 const loopback = require('loopback');
 const path = require('path');
 const ngExpressEngine = require('@nguniversal/express-engine').ngExpressEngine;
-const provideModuleMap = require('@nguniversal/module-map-ngfactory-loader').provideModuleMap;
+const provideModuleMap = require('@nguniversal/module-map-ngfactory-loader')
+  .provideModuleMap;
 const PROJECT_DIR = require('../../settings.js').PROJECT_DIR;
 
 const {
@@ -30,4 +31,4 @@ module.exports = (app) => {
 
 	// All regular routes use the Universal engine
 	app.get('/*', require(`${PROJECT_DIR}/server/middleware/spa`));
-}
+};
